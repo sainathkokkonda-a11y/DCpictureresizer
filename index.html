@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Universal Photo & Signature Resizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="tool-card">
+  <div class="card-header">
+    <h1>Universal Photo &amp; Document Resizer</h1>
+    <p>Resize Dimensions (Pixels) &amp; Compress File Size (KB/MB) Instantly</p>
+  </div>
+
+  <div class="card-body">
+
+    <!-- Step 1: Upload File -->
+    <div class="step-group">
+      <label class="step-label">Step 1: Upload Image</label>
+      <input accept="image/*" class="custom-input" id="imageInput" type="file">
+      <span id="originalInfo" style="color: #555555; display: block; font-size: 12px; font-weight: bold; margin-top: 6px;"></span>
+    </div>
+
+    <!-- Step 2: Custom Dimensions & Size -->
+    <div class="step-group">
+      <label class="step-label">Step 2: Custom Dimensions &amp; File Size Control</label>
+
+      <div class="control-grid" style="margin-bottom: 12px;">
+        <div>
+          <label style="color: #555555; font-size: 12px; font-weight: bold;">Width (px):</label>
+          <input class="custom-input" id="imgWidth" placeholder="e.g. 400" type="number">
+        </div>
+        <div>
+          <label style="color: #555555; font-size: 12px; font-weight: bold;">Height (px):</label>
+          <input class="custom-input" id="imgHeight" placeholder="e.g. 500" type="number">
+        </div>
+      </div>
+
+      <div class="control-grid">
+        <div>
+          <label style="color: #555555; font-size: 12px; font-weight: bold;">Target Max File Size (KB):</label>
+          <input class="custom-input" id="maxKb" placeholder="Auto-set from uploaded photo" type="number">
+        </div>
+        <div>
+          <label style="color: #555555; font-size: 12px; font-weight: bold;">Export Format:</label>
+          <select class="custom-select" id="imgFormat">
+            <option selected value="image/jpeg">JPG / JPEG</option>
+            <option value="image/png">PNG (File size control won't apply)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Preview & Download -->
+    <div class="step-group">
+      <label class="step-label">Step 3: Preview &amp; Download</label>
+      <button class="btn btn-primary" id="resizeBtn">Resize Image</button>
+
+      <div class="preview-box" id="previewContainer" style="display: none;">
+        <img alt="Resized Result" id="previewImage">
+        <p class="info-text" id="fileInfo"></p>
+        <a class="btn btn-success" download="resized_image.jpg" id="downloadBtn" style="display: inline-block; text-decoration: none;">Download Resized Image</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
